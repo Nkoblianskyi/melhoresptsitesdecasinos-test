@@ -20,7 +20,7 @@ export function CasinoSiteCard({ site, rank }: CasinoSiteCardProps) {
     <div className="relative">
       {site.badge && (
         <div className="absolute -top-4 left-6 z-30">
-          <div className="bg-primary text-black px-6 py-3 border-2 border-primary">
+          <div className="bg-primary text-black px-2 sm:px-4 py-1 sm:py-3 border-2 border-primary">
             <span className="text-xs font-bold uppercase tracking-wider">{site.badge}</span>
           </div>
         </div>
@@ -28,17 +28,15 @@ export function CasinoSiteCard({ site, rank }: CasinoSiteCardProps) {
 
       <div onClick={handleCardClick} className="block group cursor-pointer">
         <div
-          className={`relative p-6 transition-all duration-300 group-hover:scale-[1.01] bg-card ${
-            isFirstItem ? "border-4 border-primary hover:border-primary" : "border-3 border-muted hover:border-primary"
-          }`}
+          className={`relative p-6 transition-all duration-300 group-hover:scale-[1.01] bg-card ${isFirstItem ? "border-4 border-primary hover:border-primary" : "border-3 border-muted hover:border-primary"
+            }`}
         >
           <div className="relative z-10">
             {/* Desktop and Tablet Layout */}
             <div className="hidden md:flex md:items-center md:gap-6 lg:gap-8 pt-4">
               <div
-                className={`w-16 h-16 font-bold flex items-center justify-center text-2xl flex-shrink-0 border-4 ${
-                  isFirstItem ? "bg-primary text-black border-primary" : "bg-muted text-primary border-primary"
-                }`}
+                className={`w-16 h-16 font-bold flex items-center justify-center text-2xl flex-shrink-0 border-4 ${isFirstItem ? "bg-primary text-black border-primary" : "bg-muted text-primary border-primary"
+                  }`}
               >
                 {rank}
               </div>
@@ -52,10 +50,10 @@ export function CasinoSiteCard({ site, rank }: CasinoSiteCardProps) {
               </div>
 
               <div className="flex-1 text-center">
-                <div className="text-secondary font-bold mb-2 text-lg uppercase tracking-wide border-b-2 border-secondary pb-1">
+                <div className="text-secondary font-bold mb-2 text-sm uppercase tracking-wide border-b-2 border-secondary pb-1">
                   Bónus
                 </div>
-                <p className="text-white font-bold leading-tight text-xl">{site.bonus}</p>
+                <p className="text-white font-bold leading-tight text-[28px]">{site.bonus}</p>
               </div>
 
               <div className="text-center flex-shrink-0 border-3 border-primary p-4">
@@ -83,42 +81,45 @@ export function CasinoSiteCard({ site, rank }: CasinoSiteCardProps) {
             </div>
 
             {/* Mobile Layout */}
-            <div className="md:hidden pt-4">
-              <div className="flex items-center justify-center gap-4 mb-4">
-                <div className="flex-shrink-0 bg-black p-3 border-2 border-primary">
+            <div className="md:hidden pt-4 space-y-3">
+              {/* First Row: Logo and Bonus */}
+              <div className="flex items-center gap-3">
+                <div className="flex-shrink-0 bg-black p-2 border border-primary">
                   <img
                     src={site.logo || "/placeholder.svg"}
                     alt={site.name}
-                    className="w-[120px] h-[72px] object-contain"
+                    className="w-[120px] h-[80px] object-contain"
                   />
                 </div>
-              </div>
-
-              <div className="text-center mb-4 border-2 border-secondary p-3">
-                <div className="text-secondary font-bold text-sm mb-1 uppercase">Bónus</div>
-                <p className="text-white font-bold leading-tight text-lg">{site.bonus}</p>
-              </div>
-
-              <div className="flex items-center justify-between mb-4 border-2 border-primary p-3">
-                <div className="flex flex-col items-center">
-                  <span className="text-primary font-bold text-2xl mb-1">
-                    {site.rating.toFixed(1)}
-                    <span className="text-sm text-muted-foreground">/10</span>
-                  </span>
-                  <StarRating rating={site.rating / 2} size="sm" showHover />
+                <div className="flex-1 text-center">
+                  <div className="text-secondary font-bold text-xs mb-1 uppercase">Bónus</div>
+                  <p className="text-white font-semibold leading-tight text-2xl">{site.bonus}</p>
                 </div>
-                <div className="text-muted-foreground text-sm">({site.reviews})</div>
               </div>
 
-              <Button
-                onClick={(e) => {
-                  e.stopPropagation()
-                  window.open(site.url, "_blank")
-                }}
-                className="bg-[#22c55e] hover:bg-[#16a34a] text-white font-bold w-full py-4 uppercase tracking-wide border-2 border-[#22c55e]"
-              >
-                Jogar Agora
-              </Button>
+              {/* Second Row: Rating and Button */}
+              <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2">
+
+                  <div className="flex flex-col items-center">
+                    <span className="text-primary font-bold text-xl">
+                      {site.rating.toFixed(1)}
+                      <span className="text-sm text-muted-foreground">/10</span>
+                    </span>
+                    <StarRating rating={site.rating / 2} size="sm" showHover />
+                    <div className="text-muted-foreground text-xs">({site.reviews})</div>
+                  </div>
+                </div>
+                <Button
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    window.open(site.url, "_blank")
+                  }}
+                  className="bg-[#22c55e] hover:bg-[#16a34a] text-white font-bold flex-1 py-3 text-sm uppercase tracking-wide border-2 border-[#22c55e]"
+                >
+                  Jogar Agora
+                </Button>
+              </div>
             </div>
           </div>
         </div>

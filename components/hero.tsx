@@ -20,7 +20,7 @@ export function Hero() {
         />
       </div>
 
-      <div className="w-full min-h-[350px] flex items-center relative">
+      <div className="w-full max-h-[260px] sm:min-h-[350px] flex items-center relative">
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/90 to-black/80 z-0"></div>
 
         <div className="container mx-auto px-2 sm:px-4 text-center relative z-10 w-full py-8 sm:py-12">
@@ -35,7 +35,7 @@ export function Hero() {
             Última atualização: {formattedDate}
           </div>
 
-          <p className="text-sm sm:text-base md:text-lg text-white max-w-3xl mx-auto leading-relaxed mb-6 sm:mb-8 border-l-4 border-primary pl-4">
+          <p className="hidden sm:blocktext-sm sm:text-base md:text-lg text-white max-w-3xl mx-auto leading-relaxed mb-6 sm:mb-8 border-l-4 border-primary pl-4">
             Top ranking dos melhores sites de casino em Portugal. Avaliações detalhadas, comparações de bónus e análise
             de segurança para ajudá-lo a escolher a plataforma ideal.
           </p>
