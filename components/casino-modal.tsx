@@ -82,7 +82,7 @@ export function CasinoModal({ site: propSite, rank: propRank, isOpen: propIsOpen
 
               <div className="text-center w-full border-t-2 border-b-2 border-[#D4AF37] py-3">
                 <div className="text-[#D4AF37] font-bold mb-1 text-base uppercase tracking-wide">Bónus</div>
-                <p className="text-white font-semibold leading-tight text-lg">{site.bonus}</p>
+                <p className="text-white font-semibold leading-tight text-2xl">{site.bonus}</p>
               </div>
 
               <div className="text-center w-full">
