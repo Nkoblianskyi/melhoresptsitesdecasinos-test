@@ -97,23 +97,6 @@ export function Footer() {
             >
               <img src="/icad.png" alt="SICAD" className="h-10 md:h-12 w-auto object-contain" />
             </Link>
-
-            <Link
-              href="https://www.gamcare.org.uk"
-              target="_blank"
-              className=" hover:bg-gray-100 p-4 flex items-center justify-center transition-colors"
-            >
-              <img src="/gamecare.svg" alt="GamCare" className="h-10 md:h-12 w-auto object-contain" />
-            </Link>
-
-            <Link
-              href="https://www.gambleaware.org"
-              target="_blank"
-              className=" hover:bg-gray-100 p-4 flex items-center justify-center transition-colors"
-            >
-              <img src="/gamble.webp" alt="GambleAware" className="h-10 md:h-12 w-auto object-contain" />
-            </Link>
-
             <Link
               href="https://www.jogoresponsavel.pt"
               target="_blank"
@@ -121,6 +104,23 @@ export function Footer() {
             >
               <img src="/jogo2.png" alt="Jogo Responsável" className="h-10 md:h-12 w-auto object-contain" />
             </Link>
+            <Link
+              href="https://www.gamcare.org.uk"
+              target="_blank"
+              className="bg-white/80 hover:bg-gray-100 p-4 flex items-center justify-center transition-colors"
+            >
+              <img src="/gamecare.svg" alt="GamCare" className="h-10 md:h-12 w-auto object-contain" />
+            </Link>
+
+            <Link
+              href="https://www.gambleaware.org"
+              target="_blank"
+              className="bg-white/80 hover:bg-gray-100 p-4 flex items-center justify-center transition-colors"
+            >
+              <img src="/gamble.webp" alt="GambleAware" className="h-10 md:h-12 w-auto object-contain" />
+            </Link>
+
+
           </div>
         </div>
 
