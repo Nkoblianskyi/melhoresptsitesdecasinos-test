@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Old-school dark casino theme: black, gold, white, red, green */
+    --background: 0 0% 8%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 45 100% 51%;
+    --primary-foreground: 0 0% 10%;
+    --secondary: 0 84% 60%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 142 76% 45%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 45 100% 51%;
+    --input: 0 0% 20%;
+    --ring: 45 100% 51%;
+    --radius: 0rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* Dark textured background for old-school casino feel */
+    background-image: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 215, 0, 0.02) 2px,
+      rgba(255, 215, 0, 0.02) 4px
+    );
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-playfair), Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Old-school card styles with gold borders */
+.elegant-card {
+  background-color: hsl(var(--card));
+  border: 3px solid hsl(var(--border));
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 215, 0, 0.1);
+}
+
+.elegant-card-premium {
+  background: hsl(var(--card));
+  border: 4px double hsl(var(--primary));
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 215, 0, 0.15);
+}
+
+/* Gold accent line for old-school dividers */
+.portugal-accent-line {
+  background: linear-gradient(90deg, transparent 0%, hsl(var(--primary)) 50%, transparent 100%);
+  height: 3px;
+}
+
+/* Vintage decorative corners */
+.vintage-border {
+  border: 3px solid hsl(var(--border));
+  position: relative;
+}
+
+.vintage-border::before,
+.vintage-border::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 3px solid hsl(var(--primary));
+}
+
+.vintage-border::before {
+  top: -3px;
+  left: -3px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.vintage-border::after {
+  bottom: -3px;
+  right: -3px;
+  border-left: none;
+  border-top: none;
+}
+
+/* Gold glow effect for premium elements */
+.gold-glow {
+  color: hsl(var(--primary));
+}
+
+.gold-border-glow {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
